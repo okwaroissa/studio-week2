@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Studio Week 2</title>
+    <!-- Add Mapbox GL JS JavaScript file -->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+    <!-- Add in the Mapbox GL JS CSS file -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- Add styling info for the map -->
+    <style>
+        #mapId {
+            height: 500px;
+            width: 1000px;
+        }
+    </style>
+    <!-- Adding styling info for page layout by reading in a CSS file -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Studio Week 2</h1>
+    <!-- Add multiple pages to web page-->
+    <!-- active class displays the grey box around current page-->
+    <ul>
+        <li><a href="index.html" target="_self">Output 1</a></li>
+        <li><a href="Mapbox-gl-js-cwm.html" target="_self">Output 2</a></li>
+        <li><a href="Mapbox-gl-js-ct.html" target="_self">Output 3</a></li>
+        <li><a class="active" href="Mapbox-gl-js-bm.html" target="_self">Output 4</a></li>
+    </ul>
+
+    <h1>Custom Style with Mapbox GL JS </h1>
+
+    <!-- Container for the map -->
+    <div id="mapId">
+
+    </div>
+    <div>
+        <h2>UNHCR Corporate Color Palette</h2>
+        <p>
+            I've adopted United Nations High Commission for Refugees (UNHCR) as my client organization for which I'm building the web mapping application.
+        </p>
+        <p>
+            I adopted the corporate color palette to develop the custom style. The major coor combinations are as follows: 
+        </p>
+        <ol>
+            <li>Blue with gradations of opacity/transparency</li><br/>
+            <li>Black with shades of grey</li><br/>
+            <li>Yellow with gradations of opacity/transparency</li><br/>
+            <li>White</li>
+        </ol>
+        <br/>
+        <p>I embed below the image of UNHCR corporate color document</p>
+        <hr/>
+        <img src="unhcr-palette.PNG" alt="UNHCR Corporate Colors" />
+    </div>
+
+    <script>
+        // Set your Mapbox access token
+        mapboxgl.accessToken = "pk.eyJ1IjoiaW55YWd3ZXNvIiwiYSI6ImNrOGY4b3J6bjAxcHQzZ3MwODd4NzZ6N3YifQ.mqTyVM1FEay7PuZ5Lz2Cxg";
+
+        /* The map variable stores a new mapbox gl map.
+        * map's center set to [-122.467, 37.798] with zoom 13.
+        * Set the style URL to your custom style
+        * Update the style with your custom style's Style URL.
+        * See the Style URL'S reference for more info: https://docs.mapbox.com/help/glossary/style-url/
+        */
+        var map = new mapboxgl.Map({
+            center: [-122.467, 37.798],
+            zoom: 13,
+            style: "mapbox://styles/inyagweso/ck8khzo840n061irud05lhr0a",
+            container: "mapId"
+        });
+
+    </script>
+
+</body>
+
+</html>
